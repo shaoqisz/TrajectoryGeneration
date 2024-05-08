@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1165</width>
+    <height>574</height>
+   </rect>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Trajectory Generation</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource/resource.qrc">
+    <normaloff>:/arrow-right.png</normaloff>:/arrow-right.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0,0,0,0">
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Current Acceleration</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="3">
+         <widget class="QDoubleSpinBox" name="spin_box_target_acceleration">
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-999999.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>999999.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Current Velocity</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Target Position</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QDoubleSpinBox" name="spin_box_current_acceleration">
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-999999.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>999999.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="label_stop_time">
+          <property name="text">
+           <string>Stop Time</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Current Position</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="4">
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>Max Abs Acceleration</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="8">
+         <widget class="QPushButton" name="btn_apply_max_vel">
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Apply</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="4">
+         <widget class="QLabel" name="label_10">
+          <property name="text">
+           <string>Trajectory Time</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="6">
+         <widget class="QPushButton" name="btn_generate_trajectory">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Generate</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="5">
+         <widget class="QDoubleSpinBox" name="spin_box_max_jerk">
+          <property name="toolTip">
+           <string/>
+          </property>
+          <property name="statusTip">
+           <string/>
+          </property>
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="maximum">
+           <double>9999999.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>10.000000000000000</double>
+          </property>
+          <property name="value">
+           <double>4000.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="4">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Max Abs Velocity</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="5">
+         <widget class="QDoubleSpinBox" name="spin_box_max_acceleration">
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="maximum">
+           <double>999999.000000000000000</double>
+          </property>
+          <property name="value">
+           <double>400.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="7">
+         <widget class="QPushButton" name="btn_clear_trajectory">
+          <property name="text">
+           <string>Clear</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QDoubleSpinBox" name="spin_box_target_position">
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-999999.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>999999.000000000000000</double>
+          </property>
+          <property name="value">
+           <double>190.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="5">
+         <widget class="QLineEdit" name="line_trajectory_time">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <italic>false</italic>
+            <bold>true</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+           </font>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="QCheckBox" name="check_box_show_jerk">
+          <property name="text">
+           <string>Show Jerk</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="2">
+         <widget class="QComboBox" name="combo_box_algorithm_type">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="toolTip">
+           <string/>
+          </property>
+          <property name="editable">
+           <bool>false</bool>
+          </property>
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>Online Trajectory Generation (real time)</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Offline Trajectory Generation (better performance)</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Target Velocity Trajectory Generation</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Stop Control Trajectory Generation</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="6">
+         <widget class="QLabel" name="label_12">
+          <property name="text">
+           <string>Actual Max Accel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="3">
+         <widget class="QDoubleSpinBox" name="spin_box_stop_jerk">
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-9999999.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>9999999.000000000000000</double>
+          </property>
+          <property name="value">
+           <double>4000.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>Target Velocity</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="6">
+         <widget class="QLabel" name="label_13">
+          <property name="text">
+           <string>Actual Max Velocity</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="2">
+         <widget class="QLabel" name="label_stop_jerk">
+          <property name="text">
+           <string>Stop Jerk</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="8">
+         <widget class="QPushButton" name="btn_apply_max_accel">
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Apply</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="7">
+         <widget class="QLineEdit" name="line_actual_max_accel">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QCheckBox" name="check_box_quick_calculate">
+          <property name="text">
+           <string>Quick Cal.</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="5">
+         <widget class="QDoubleSpinBox" name="spin_box_max_velocity">
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="maximum">
+           <double>999999.000000000000000</double>
+          </property>
+          <property name="value">
+           <double>400.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>Target Acceleration</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="7">
+         <widget class="QLineEdit" name="line_actual_max_velocity">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QDoubleSpinBox" name="spin_box_current_velocity">
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-999999.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>999999.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QDoubleSpinBox" name="spin_box_current_position">
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-999999.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>999999.000000000000000</double>
+          </property>
+          <property name="value">
+           <double>0.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="4">
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>Max Abs Jerk</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QDoubleSpinBox" name="spin_box_target_velocity">
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>-999999.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>999999.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QDoubleSpinBox" name="spin_box_stop_time">
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="maximum">
+           <double>9999.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+          <property name="value">
+           <double>1.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="2">
+         <widget class="QCheckBox" name="check_box_show_trace">
+          <property name="text">
+           <string>Show Trace</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="TrajectoryView" name="trajectoryView">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="text_logs">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1165</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="action_version"/>
+   </widget>
+   <addaction name="menuAbout"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_version">
+   <property name="text">
+    <string>Version</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TrajectoryView</class>
+   <extends>QGraphicsView</extends>
+   <header>trajectoryview.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>combo_box_algorithm_type</tabstop>
+  <tabstop>spin_box_current_position</tabstop>
+  <tabstop>spin_box_current_velocity</tabstop>
+  <tabstop>spin_box_current_acceleration</tabstop>
+  <tabstop>spin_box_stop_time</tabstop>
+  <tabstop>spin_box_target_position</tabstop>
+  <tabstop>spin_box_target_velocity</tabstop>
+  <tabstop>spin_box_target_acceleration</tabstop>
+  <tabstop>spin_box_stop_jerk</tabstop>
+  <tabstop>spin_box_max_velocity</tabstop>
+  <tabstop>spin_box_max_acceleration</tabstop>
+  <tabstop>spin_box_max_jerk</tabstop>
+  <tabstop>line_actual_max_velocity</tabstop>
+  <tabstop>line_actual_max_accel</tabstop>
+  <tabstop>btn_apply_max_vel</tabstop>
+  <tabstop>btn_apply_max_accel</tabstop>
+  <tabstop>check_box_quick_calculate</tabstop>
+  <tabstop>check_box_show_jerk</tabstop>
+  <tabstop>check_box_show_trace</tabstop>
+  <tabstop>line_trajectory_time</tabstop>
+  <tabstop>btn_generate_trajectory</tabstop>
+  <tabstop>btn_clear_trajectory</tabstop>
+  <tabstop>trajectoryView</tabstop>
+  <tabstop>text_logs</tabstop>
+ </tabstops>
+ <resources>
+  <include location="resource/resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
